@@ -1,0 +1,40 @@
+@use 'src/styles/colors.scss' as c;
+@use 'src/styles/breakpoints.scss' as b;
+
+.card {
+    max-width: 600px;
+    width: 100%;
+    overflow: hidden;
+
+    @media screen and (min-width: b.$mobile) {
+        width: unset;
+        border-radius: 5px;
+    }
+}
+
+.backdrop {
+    position: absolute;
+    inset-inline-start: 0;
+    inset-block-start: 0;
+    height: 100%;
+    width: 100%;
+    background: transparent;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background: c.$salmon;
+    padding: 16px 24px 28px;
+
+    @media screen and (min-width: b.$mobile) {
+        padding: 32px 40px 24px;
+        flex-direction: row;
+        gap: 27px;
+    }
+}
