@@ -7,7 +7,7 @@ import styles from "./InputNumber.module.scss";
 
 const InputNumber = () => {
   const [value, setValue] = useState("");
-  const { register } = useFormContext<FormSchema>();
+  const { register, setValue: setFormValue } = useFormContext<FormSchema>();
   const { onChange, onBlur, ...rest } = register("donation");
 
   const handleChange: ChangeEventHandler<HTMLInputElement> = (e) => {
@@ -40,6 +40,7 @@ const InputNumber = () => {
           onBlur={(e) => {
             setValue(getCurrencyFormat(value));
             onBlur(e);
+            setFormValue("donation", getFloatString(getCurrencyFormat(value)));
           }}
           maxLength={12}
           onChange={handleChange}
