@@ -1,3 +1,9 @@
+# SPA Assignment - how to run
+
+1. Install dependencies with npm `npm install`
+2. To run in dev mode, use `npm run dev`
+3. To run the build version, first run `npm run build` and then `npm run serve` or `npm run preview`
+
 # React + TypeScript + Vite
 
 This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
@@ -17,12 +23,12 @@ If you are developing a production application, we recommend updating the config
 export default {
   // other rules...
   parserOptions: {
-    ecmaVersion: 'latest',
-    sourceType: 'module',
-    project: ['./tsconfig.json', './tsconfig.node.json'],
+    ecmaVersion: "latest",
+    sourceType: "module",
+    project: ["./tsconfig.json", "./tsconfig.node.json"],
     tsconfigRootDir: __dirname,
   },
-}
+};
 ```
 
 - Replace `plugin:@typescript-eslint/recommended` to `plugin:@typescript-eslint/recommended-type-checked` or `plugin:@typescript-eslint/strict-type-checked`
