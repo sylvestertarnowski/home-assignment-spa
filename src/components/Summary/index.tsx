@@ -1,5 +1,5 @@
 import { useWatch } from "react-hook-form";
-import { getCurrencyFormat } from "../../lib/currency";
+import { getCurrencyFormat, getFloatString } from "../../lib/currency";
 import getNextMonthDate from "../../lib/getNextMonthDate";
 import styles from "./Summary.module.scss";
 
@@ -16,7 +16,7 @@ const Summary = () => {
   const date = useWatch({ name: "date", defaultValue: getNextMonthDate() });
 
   const calculatedDonation = (
-    monthDiff(new Date(), date) * donation || 0
+    monthDiff(new Date(), date) * parseInt(getFloatString(donation)) || 0
   ).toFixed(2);
   const totalDonationText = `$${getCurrencyFormat(calculatedDonation)}`;
   const monthlyDonationText = `$${getCurrencyFormat(donation || "0")}`;
