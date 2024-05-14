@@ -1,0 +1,99 @@
+@use "src/styles/colors" as c;
+
+.container {
+}
+
+button.buttonRight,
+button.buttonLeft {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  z-index: 1;
+  width: 24px;
+  height: 24px;
+  border: none;
+  border-radius: 5px;
+  inset-block-start: 18px;
+  background: transparent;
+  transition: background 0.2s ease-in;
+  margin: 0;
+
+  &:active {
+    background: #e8eaf2;
+  }
+
+  &:hover {
+    background: #f3f5fe;
+    cursor: pointer;
+  }
+}
+
+.buttonLeft {
+  inset-inline-start: 12px;
+}
+
+.buttonRight {
+  inset-inline-end: 12px;
+}
+
+.label {
+  display: block;
+  font-family: "Work Sans";
+  margin-block-end: 6px;
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 18px;
+  text-align: start;
+  color: c.$midnight-grey;
+}
+
+.box {
+  position: relative;
+}
+
+.inputBox {
+  display: flex;
+  flex-direction: column;
+  padding: 12px 52px 12px 52px;
+  box-sizing: border-box;
+  height: 60px;
+  width: 100%;
+  font-family: Rubik;
+  font-size: 24px;
+  font-weight: 500;
+  line-height: 28px;
+  text-align: center;
+  border: 1px solid #e9eef2;
+  border-radius: 4px;
+  transition: border-color 0.2s ease-in;
+  pointer-events: none;
+
+  + .input {
+    position: absolute;
+    inset-inline-start: 52px;
+    inset-block-start: 0;
+    box-sizing: border-box;
+    height: 60px;
+    width: calc(100% - 104px);
+    opacity: 0;
+  }
+}
+
+.month {
+  font-family: Rubik;
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 20px;
+  text-align: center;
+  color: c.$purple-grey;
+}
+
+.year {
+  font-family: Work Sans;
+  font-size: 12px;
+  font-weight: 400;
+  line-height: 16px;
+  text-align: center;
+  color: c.$purple-grey;
+}

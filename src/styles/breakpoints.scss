@@ -1,1 +1,7 @@
 $mobile: 450px;
+
+@mixin desktop {
+  @media screen and (min-width: $mobile) {
+    @content;
+  }
+}

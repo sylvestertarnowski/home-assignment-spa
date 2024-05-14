@@ -1,0 +1,46 @@
+@use "src/styles/colors" as c;
+
+.base {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border: none;
+  background: none;
+  margin: 0 8px 8px;
+  box-sizing: border-box;
+  font-family: "Work Sans";
+  font-size: 16px;
+  font-weight: 600;
+  line-height: 20px;
+  text-align: center;
+  height: 52px;
+  border-radius: 5px;
+  overflow: hidden;
+  transition: background 0.2s ease-in;
+}
+
+.primary {
+  color: c.$white;
+  background: c.$midnight-purple;
+
+  &:hover {
+    background: #645d93;
+  }
+
+  &:active {
+    background: #241e47;
+  }
+}
+.secondary {
+  border: 1px solid c.$purple-grey;
+  color: c.$purple-grey;
+  background: c.$white;
+
+  &:hover {
+    background: #b2a7f41a;
+  }
+
+  &:active {
+    background: #b2a7f440;
+  }
+}

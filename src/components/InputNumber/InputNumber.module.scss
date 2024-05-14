@@ -1,0 +1,58 @@
+@use "src/styles/colors" as c;
+
+.container {
+}
+
+.addonLeft {
+  position: absolute;
+  inset-inline-start: 15.33px;
+  inset-block-start: 21px;
+}
+
+.label {
+  display: block;
+  font-family: "Work Sans";
+  margin-block-end: 6px;
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 18px;
+  text-align: start;
+  color: c.$midnight-grey;
+}
+
+.box {
+  position: relative;
+}
+
+.input {
+  padding: 16px 16px 16px 40px;
+  box-sizing: border-box;
+  height: 60px;
+  width: 100%;
+  appearance: textfield;
+  font-family: Rubik;
+  font-size: 24px;
+  font-weight: 500;
+  line-height: 28px;
+  text-align: start;
+  border: 1px solid #e9eef2;
+  border-radius: 4px;
+  transition: border-color 0.2s ease-in;
+  color: c.$purple-grey;
+
+  &:focus {
+    border-color: c.$midnight-purple;
+    outline: none;
+  }
+
+  &::placeholder {
+    color: linear-gradient(0deg, c.$light-grey, c.$light-grey),
+      linear-gradient(0deg, rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2));
+  }
+
+  &::-webkit-inner-spin-button,
+  &::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+  }
+}

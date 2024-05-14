@@ -1,40 +1,113 @@
-@use 'src/styles/colors.scss' as c;
-@use 'src/styles/breakpoints.scss' as b;
+@use "src/styles/colors.scss" as c;
+@use "src/styles/breakpoints.scss" as b;
 
 .card {
-    max-width: 600px;
-    width: 100%;
-    overflow: hidden;
+  width: 100%;
+  max-height: 100vh;
+  overflow-x: hidden;
+  overflow-y: auto;
+  box-shadow: 0px 16px 32px 0px #1e2a3214;
 
-    @media screen and (min-width: b.$mobile) {
-        width: unset;
-        border-radius: 5px;
-    }
+  @include b.desktop {
+    width: unset;
+    border-radius: 5px;
+    max-width: 600px;
+  }
 }
 
 .backdrop {
-    position: absolute;
-    inset-inline-start: 0;
-    inset-block-start: 0;
-    height: 100%;
-    width: 100%;
-    background: transparent;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
+  position: absolute;
+  inset-inline-start: 0;
+  inset-block-start: 0;
+  height: 100%;
+  width: 100%;
+  background: transparent;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
 }
 
 .header {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    background: c.$salmon;
-    padding: 16px 24px 28px;
+  display: flex;
+  position: relative;
+  flex-direction: column;
+  align-items: center;
+  background: c.$salmon;
+  padding: 33px 24px 28px;
+  gap: 23.5px;
 
-    @media screen and (min-width: b.$mobile) {
-        padding: 32px 40px 24px;
-        flex-direction: row;
-        gap: 27px;
+  @include b.desktop {
+    padding: 37px 40px 29px;
+    flex-direction: row;
+    gap: 27.5px;
+  }
+
+  h1 {
+    font-family: "Work Sans";
+    font-size: 24px;
+    font-weight: 600;
+    line-height: 28.8px;
+    text-align: center;
+    color: c.$midnight-purple;
+    margin-block: 0 4px;
+
+    @include b.desktop {
+      font-size: 32px;
+      line-height: 38.4px;
+      text-align: start;
     }
+  }
+
+  p {
+    font-family: "Inter";
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 20px;
+    text-align: center;
+    color: c.$purple-grey;
+    margin: 0;
+
+    @include b.desktop {
+      text-align: start;
+    }
+  }
+}
+
+.content {
+  background: c.$white;
+  padding: 32px 24px 48px;
+  overflow-y: auto;
+
+  @include b.desktop {
+    padding-inline: 40px;
+    padding-block-end: 32px;
+  }
+}
+
+.inputs {
+  display: grid;
+  grid-template-columns: minmax(1fr, auto);
+  gap: 16px;
+
+  @include b.desktop {
+    grid-template-columns: 1fr 1fr;
+    gap: 24px;
+  }
+}
+
+.buttons {
+  display: grid;
+
+  @include b.desktop {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+button.cancelButton {
+  display: none;
+
+  @include b.desktop {
+    display: inline;
+  }
 }

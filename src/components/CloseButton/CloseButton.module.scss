@@ -1,0 +1,27 @@
+@use "src/styles/breakpoints" as b;
+@use "src/styles/colors" as c;
+
+.button {
+  position: absolute;
+  inset-block-start: 8px;
+  inset-inline-end: 8px;
+  border: none;
+  background: transparent;
+  width: 40px;
+  height: 40px;
+  transition: background 0.2s ease-in;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  &:hover,
+  &:active {
+    cursor: pointer;
+    background: c.$salmon-dark;
+  }
+
+  @include b.desktop {
+    display: none;
+  }
+}
