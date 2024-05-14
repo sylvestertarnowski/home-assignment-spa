@@ -1,10 +1,7 @@
 @use "src/styles/colors" as c;
 
-.container {
-}
-
-button.buttonRight,
-button.buttonLeft {
+.buttonRight,
+.buttonLeft {
   display: flex;
   justify-content: center;
   align-items: center;

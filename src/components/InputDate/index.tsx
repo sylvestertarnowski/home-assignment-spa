@@ -17,10 +17,11 @@ const InputDate = () => {
   const dateInputValue: Date = watch("date", date);
 
   const onPreviousMonth = () => {
+    const currentDate = new Date();
     const inputYear = dateInputValue.getFullYear();
-    const yearNow = new Date().getFullYear();
+    const yearNow = currentDate.getFullYear();
     const inputMonth = dateInputValue.getMonth();
-    const currentMonth = new Date().getMonth();
+    const currentMonth = currentDate.getMonth();
 
     if (inputYear === yearNow && inputMonth === currentMonth + 1) {
       return;
@@ -33,11 +34,13 @@ const InputDate = () => {
     setValue(
       "date",
       new Date(dateInputValue.getFullYear(), dateInputValue.getMonth() + 1, 2)
+        .toISOString()
+        .split("T")[0]
     );
   };
 
   return (
-    <div className={styles.container}>
+    <div>
       <label htmlFor="date" className={styles.label}>
         Every month until
       </label>

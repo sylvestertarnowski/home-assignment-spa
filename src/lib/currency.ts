@@ -1,8 +1,17 @@
+/**
+ * Retruns empty string for strings that aren't valid numbers.
+ */
 export const getCurrencyFormat = (str: string): string => {
-  const stripExtraCharacters = str.replace(/[^.\d]/g, "");
-  const asNumber = parseFloat(stripExtraCharacters);
+  const numberAsString = str.replace(/[^.\d]/g, "");
+  if (!numberAsString.length) {
+    return "";
+  }
+  const asNumber = parseFloat(parseFloat(numberAsString).toFixed(2));
   return asNumber.toLocaleString();
 };
 
-export const stripCurrencyCharacters = (str: string): string =>
+/**
+ * Parses string to only allow floating point number representation.
+ */
+export const getFloatString = (str: string): string =>
   str.replace(/[^.\d]/g, "");
